@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>L'intégration cotninue est morte ? Vive le déploiement continu !</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Rémi Alvado">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Custom styles -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="introduction">
+					<h3>L'intégration continue est morte ?</h3>
+					<h1>Vive le déploiement continu !</h1>
+					<p>
+						<small><a href="mailto:remi.alvado@gmail.com">Rémi Alvado</a> / <a href="http://twitter.com/remialvado">@remialvado</a> / <a href="http://www.shoppingadventure.fr/">Shopping Adventure</a></small>
+					</p>
+				</section>
+
+				<section id="small-steps">
+					<h3>Principe : faire des petits pas</h3>
+					<div class="container fragment" data-fragment-1="add-class(visible)"
+													data-fragment-2="add-class(waterfall)">
+						<h4>Waterfall</h4>
+						<div class="containee"></div>
+					</div>
+					<div class="container fragment" data-fragment-3="add-class(visible)" 
+													data-fragment-4="add-class(agile1)"
+													data-fragment-5="add-class(agile2)"
+													data-fragment-6="add-class(agile3)"
+													data-fragment-7="add-class(agile4)">
+						<h4>Agile</h4>
+						<div class="containee"></div>
+					</div>
+					<div class="container fragment" data-fragment-8="add-class(visible)" 
+												    data-fragment-9="add-class(continuous-deployment)">
+						<h4>Continuous Deployment</h4>
+						<div class="containee"></div>
+					</div>
+				</section>
+
+				<section id="goals" data-auto-start="1500">
+					<h2>Objectifs</h2>
+					<ul>
+						<li><span data-next-fragment="1000" class="fragment highlight-blue" data-fragment-1="add-class(visible)">Créer de la valeur</span> dès que possible pour l'utilisateur.</li>
+						<li>Réduire le temps de debug et <span data-next-fragment="1000" class="fragment highlight-blue" data-fragment-2="add-class(visible)">augmenter celui de création de valeur</span></li>
+						<li>Arrêter de faires des releases <span data-next-fragment="1000" class="fragment highlight-blue" data-fragment-3="add-class(visible)">Big bang</span></li>
+						<li>Arrêter de perdre son temps avec des <span data-next-fragment="1000" class="fragment highlight-blue" data-fragment-4="add-class(visible)">branches, rebase, merge, cherry-pick, ...</span></li>
+						<li>Rendre vos tests <span data-next-fragment="1000" class="fragment highlight-blue" data-fragment-5="add-class(visible)">utiles</span></li>
+					</ul>
+				</section>
+
+				<section id="steps" data-auto-start="1500">
+					<h2>Les étapes</h2>
+					<svg width="640" height="280" xmlns="http://www.w3.org/2000/svg">
+						 <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+						 <g>
+						  <title>Layer 1</title>
+						  <rect fill="#ff0000" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" fill-opacity="0" x="30" y="227" width="250.99999" height="2" id="svg_3" stroke="#3b759e"/>
+						  <text id="svg_4" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="213.5" x="373" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#0000bf" fill="#3b759e">Tests automatisés</text>
+						  <text id="svg_8" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="170.5" x="427" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#0000bf" fill="#3b759e">Déploiement automatisé du serveur</text>
+						  <text id="svg_9" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="124.5" x="395" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#0000bf" fill="#3b759e">Déploiement automatisé de l'infra</text>
+						  <path fill="#ff0000" stroke="#3b759e" stroke-width="3" d="m6.86501,267.08313l148.57085,-260l148.57257,260l-297.14343,0l0.00002,0z" id="svg_1" fill-opacity="0"/>
+						  <rect fill="#ff0000" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" fill-opacity="0" x="105.50001" y="96.5" width="100" height="2" stroke="#3b759e" id="svg_5"/>
+						  <rect fill="#ff0000" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" fill-opacity="0" x="53.50001" y="185.5" width="203.99999" height="2" stroke="#3b759e" id="svg_6"/>
+						  <rect fill="#ff0000" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" fill-opacity="0" x="79.50001" y="141.5" width="152.99999" height="2" stroke="#3b759e" id="svg_7"/>
+						  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_2" y="253" x="464" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#0000bf" fill="#3b759e">Déploiement automatisé du code</text>
+						  <text id="svg_10" xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" y="71.5" x="315" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke="#0000bf" fill="#3b759e">Rollback automatique</text>
+						 </g>
+				    </svg>
+				</section>
+
+				<section id="auto-deploy-code" data-auto-start="2000">
+					<h3>Déploiement automatisé du code - Outils</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Bash</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Perl / Ruby</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Capistrano / Capifony</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-4="add-class(visible)">Puppet / Chef</li>
+					</ul>
+				</section>
+
+				<section id="auto-deploy-code-chef" data-auto-start="2000">
+					<h3>Chef</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Solution Open Source + SaaS</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Ruby + DSL</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Rôle, Noeuds et Recettes</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-4="add-class(visible)">Nombreuses recettes open source</li>
+					</ul>
+				</section>
+
+				<section id="auto-deploy-code-chef-example">
+					<h3>Chef - Example</h3>
+					<pre><code class="ruby" style="max-height: 600px !important;">deploy_revision "website" do
+ user app['owner']
+ group app['group']
+ deploy_to ::File.join('/home/kbrw',#{app[:id]})
+ repository app['repository']
+ revision 'master'
+ template "#{release_path}/app/config/parameters.yml" do
+  source "#{release_path}/app/config/parameters.yml.erb"
+   variables(
+    :specificConfiguration => app['specificConfiguration']
+   )
+ end
+ template "#{node[:apache][:dir]}/sites-available/website.conf" do
+  source "#{release_path}/app/Resources/apache/website.conf.erb"
+  owner "root"
+  group "root"
+  variables( 
+   :docroot => ::File.join(app['deploy_to'],'current/web'),
+  )
+ done
+done
+service "apache2" do action :restart; end</code></pre>
+				</section>
+
+				<section id="auto-deploy-code-advices" data-auto-start="1000">
+					<h3>Déploiement automatisé du code - Conseils</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Faites le tout de suite - Sprint 0.</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Construisez petit à petit.</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Utilisez la même méthode en QA.</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-4="add-class(visible)">Refusez de tricher ou de court-circuiter.</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-5="add-class(visible)">Automatisez tout avec de revenir au "push-button"</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-6="add-class(visible)">Procédure de rollback</li>
+						<li class="fragment highlight-red invisible" data-fragment-7="remove-class(invisible); add-class(visible)">Le code de déploiement reste du code : il se teste !</li>
+					</ul>
+				</section>
+
+				<section id="auto-tests-tools" data-auto-start="1000">
+					<h3>Tests automatiques - Conseils</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Feedback, feedback, feedback, ...</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Tourner les tests sur du code déployé</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Iso-prod en QA et en Dev</li>
+					</ul>
+				</section>
+
+				<section id="auto-deploy-server">
+					<h3>Déploiement automatisé du Serveur</h3>
+					<pre class="fragment" data-fragment-1="add-class(visible)"><code class="ruby" style="max-height: 600px !important;"><span class="fragment" data-fragment-2="add-class(visible)">include_recipe "php"
+include_recipe "apache"</span>
+
+deploy_revision "website" do
+ user app['owner']
+ group app['group']
+ deploy_to ::File.join('/home/kbrw',#{app[:id]})
+ repository app['repository']
+ revision 'master'
+ template "#{release_path}/app/config/parameters.yml" do
+  source "#{release_path}/app/config/parameters.yml.erb"
+   variables(
+    :specificConfiguration => app['specificConfiguration']
+   )
+ end
+ template "#{node[:apache][:dir]}/sites-available/website.conf" do
+  source "#{release_path}/app/Resources/apache/website.conf.erb"
+  owner "root"
+  group "root"
+  variables( 
+   :docroot => ::File.join(app['deploy_to'],'current/web'),
+  )
+ done
+done
+service "apache2" do action :restart; end</code></pre>
+				</section>
+
+				<section id="auto-deploy-infra-tools" data-auto-start="2000">
+					<h3>Déploiement automatisé de l'infra - Outils</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Cloud Public : EC2, Heroku, ...</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Bash</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Puppet / Chef</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-4="add-class(visible)">Open Stack / Cloud Stack</li>
+					</ul>
+				</section>
+
+				<section id="auto-deploy-infra-advices" data-auto-start="2000">
+					<h3>Déploiement automatisé de l'infra - Conseils</h3>
+					<ul>
+						<li class="fragment" data-next-fragment="2000" data-fragment-1="add-class(visible)">Rien de manuel !</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-2="add-class(visible)">Pas besoin de recette de mise à jour</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-3="add-class(visible)">Attention au réseau</li>
+						<li class="fragment" data-next-fragment="2000" data-fragment-4="add-class(visible)">Avoir des compétences de sysadmin</li>
+					</ul>
+				</section>
+
+				<section id="auto-rollback">
+					<h3>Rollback &amp; Blue Green</h3>
+					<span class="container" data-fragment-3 ="add-class(traffic-50-50)"
+											data-fragment-6 ="remove-class(traffic-50-50) ; add-class(traffic-100-0)"
+											data-fragment-8 ="remove-class(traffic-100-0) ; add-class(traffic-90-10)"
+											data-fragment-9 ="remove-class(traffic-90-10) ; add-class(traffic-80-20)"
+											data-fragment-11="remove-class(traffic-80-20) ; add-class(traffic-100-0)"
+											data-fragment-14="remove-class(traffic-100-0) ; add-class(traffic-90-10)"
+											data-fragment-15="remove-class(traffic-90-10) ; add-class(traffic-80-20)"
+											data-fragment-16="remove-class(traffic-80-20) ; add-class(traffic-50-50)"
+											data-fragment-17="remove-class(traffic-50-50) ; add-class(traffic-20-80)"
+											data-fragment-18="remove-class(traffic-20-80) ; add-class(traffic-0-100)"
+											data-fragment-20="remove-class(traffic-0-100) ; add-class(traffic-50-50)">
+						<div class="invisible blue"  data-fragment-1="remove-class(invisible)">
+							<div class="traffic"></div>
+							<p data-fragment-19="change-content(V3)">V1</p>
+						</div>
+						<div class="invisible green" data-fragment-2="remove-class(invisible)">
+							<div class="traffic"></div>
+							<p data-fragment-7="change-content(V2)"
+							   data-fragment-13="change-content(V3)">V1</p>
+						</div>
+						<div class="invisible metrics" data-fragment-4= "remove-class(invisible)"
+													   data-fragment-5= "add-class(ok)"
+													   data-fragment-10="remove-class(ok); add-class(ko)"
+													   data-fragment-12="remove-class(ko); add-class(ok)">
+						</div>
+					</span>
+				</section>
+
+				<section id="questions" class="text">
+					<h2>Questions ?</h2>
+				</section>
+			</div>
+		</div>
+		<a href="https://github.com/remialvado/pres-humantalks-continuous-deployment"><img style="position: absolute; top: 0; right: 0; border: 0;" src="images/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/jquery-1.5.0.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener('slidechanged', function(ev) {
+				var autoStart = ev.currentSlide.getAttribute("data-auto-start");
+				if (autoStart) {
+					setTimeout(Reveal.nextFragment, autoStart);
+				}
+			});
+
+			Reveal.addEventListener('fragmentshown', function(ev) {
+				var current = ev.fragment;
+
+				// activate next fragment automatically
+				var autoFragment = current.getAttribute("data-next-fragment");
+				if (autoFragment) {
+					setTimeout(Reveal.nextFragment, autoFragment);
+				}
+				
+				// Duplicate fragment into anothe node
+				var previousReplicate = current;
+				var nextReplicate = document.querySelector(previousReplicate.getAttribute("data-replicate-on"));
+				if (nextReplicate) {
+					var timeout = previousReplicate.getAttribute("data-replicate-in") || 0;
+					replicate = function() {
+						nextReplicate.className = previousReplicate.className;
+						previousReplicate = nextReplicate;
+						nextReplicate = document.querySelector(previousReplicate.getAttribute("data-replicate-on"));
+						if (nextReplicate) {
+							timeout = previousReplicate.getAttribute("data-replicate-in") || 0;
+							setTimeout(replicate, timeout);
+						}
+					}
+					setTimeout(replicate, timeout);
+				}
+
+				// send custom event
+				var customEvent = current.getAttribute("data-fragment-custom-event");
+				if (customEvent) {
+					Reveal.dispatchEvent(customEvent, { fragment: current });	
+				}
+			});
+
+			Reveal.addEventListener('fragmenthidden', function(ev) {
+				var current = ev.fragment;
+
+				// activate previous fragment automatically
+				var autoFragment = current.getAttribute("data-next-fragment");
+				if (autoFragment) {
+					setTimeout(Reveal.previousFragment, autoFragment);
+				}
+			});
+		   
+		</script>
+
+	</body>
+</html>
